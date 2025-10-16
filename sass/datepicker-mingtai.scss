@@ -1,0 +1,55 @@
+@use 'sass:color';
+$mt-font-size: 1rem;
+$mt-view-header: rgb(27, 137, 206);
+$mt-view-header-hover: rgb(255, 255, 255);
+$mt-grid-hover: #dfdfdf;
+$mt-view-footer: #ffe5f4;
+
+// 顯示字型
+ .datepicker-header, .datepicker-footer {
+  .datepicker-controls {
+    .button {
+      font-size: $mt-font-size;
+    }
+  }
+ }
+// 標題列 (年月) 的效果覆蓋
+.datepicker-header, .datepicker-header .datepicker-controls {
+  background-color: $mt-view-header;
+  color: $white;
+  padding-top: 0;
+
+  button {
+    background-color: $mt-view-header;
+    color: $white;
+    border-radius: 0;
+  }
+}
+// 標題列 hover 上去的效果
+.button {
+  .datepicker-header & {
+     &:hover {
+        background-color: $mt-view-header-hover !important;
+        color: #000000 !important;
+      }
+  }
+}
+
+// 日期表格
+.datepicker-cell:not(.disabled) {
+  // hover
+  &:hover {
+    background-color: $mt-grid-hover !important;
+    color: #000000 !important;
+  }
+}
+
+// 底部: 今日按鈕
+.datepicker-footer {
+  background-color: $mt-view-footer !important;
+
+  .button {
+    background-color: $mt-view-footer !important;
+    border: 0 none;
+  }
+}
