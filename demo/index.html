@@ -589,6 +589,7 @@
     <div class="toggle-button"></div>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
     <script src="../dist/js/datepicker-full.js"></script>
+    <script src="../dist/js/locales/zh-TW.js"></script>
     <script src="./live-demo.js"></script>
     <script>
       /*global initialize onChangeType onChangeDirection onChangeInputOption onChangeInputOption onChangeTextareaOption onClickCheckboxOptions switchPicker */
@@ -615,6 +616,12 @@
       });
 
       switchPicker('input');
+      
+      setTimeout(() => {
+        updateOption('language', 'zh-TW');
+        updateOption('todayButton', true);
+        updateOption('todayHighlight', true);
+      });
     </script>
   </body>
 </html>
