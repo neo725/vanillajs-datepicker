@@ -1,4 +1,5 @@
 import {lastItemOf, isInRange, limitToRange} from '../lib/utils.js';
+import { formatDate } from '../lib/date-format.js';
 import {today, regularizeDate} from '../lib/date.js';
 import {
   parseHTML,
@@ -56,7 +57,7 @@ function processPickerOptions(picker, options) {
     });
   }
   if (options.locale) {
-    picker.controls.todayButton.textContent = options.locale.today;
+    picker.controls.todayButton.textContent = `${options.locale.today}: ${formatDate(today(), options.format, options.locale)}`;
     picker.controls.clearButton.textContent = options.locale.clear;
   }
   if ('todayButton' in options) {
